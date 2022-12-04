@@ -109,7 +109,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="useragent-class">UserAgent Class</h1>
+                <h1 id="useragent-class">UserAgent Class<a class="headerlink" href="#useragent-class" title="Permanent link">&para;</a></h1>
 
 
 <div class="doc doc-object doc-class">
@@ -122,7 +122,7 @@
 
         <details class="quote">
           <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-          <pre class="highlight"><code class="language-python">class UserAgent:
+          <pre class="codehilite"><code class="language-python">class UserAgent:
     def __init__(self, ua_name="*", crawl_delay=0):
         """Initialize UserAgent objet with a user-agent name and crawl delay varible.
 
@@ -261,9 +261,9 @@
 
 
 <h2 id="pyrobotstxt.UserAgent.__init__" class="doc doc-heading">
-<code class="highlight language-python">__init__(ua_name='*', crawl_delay=0)</code>
+<code class="codehilite language-python">__init__(ua_name='*', crawl_delay=0)</code>
 
-</h2>
+<a href="#pyrobotstxt.UserAgent.__init__" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
@@ -286,7 +286,7 @@
           <td>
                 <code>str</code>
           </td>
-          <td><p>name of the user-agent. Defaults to "*".</p></td>
+          <td><p>name of the user-agent. Defaults to &ldquo;*&rdquo;.</p></td>
           <td>
                 <code>&#39;*&#39;</code>
           </td>
@@ -306,7 +306,7 @@
 
       <details class="quote">
         <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-        <pre class="highlight"><code class="language-python">def __init__(self, ua_name="*", crawl_delay=0):
+        <pre class="codehilite"><code class="language-python">def __init__(self, ua_name="*", crawl_delay=0):
     """Initialize UserAgent objet with a user-agent name and crawl delay varible.
 
     Args:
@@ -329,9 +329,9 @@
 
 
 <h2 id="pyrobotstxt.UserAgent.add_allow" class="doc doc-heading">
-<code class="highlight language-python">add_allow(allow_items, unique=True, comments='')</code>
+<code class="codehilite language-python">add_allow(allow_items, unique=True, comments='')</code>
 
-</h2>
+<a href="#pyrobotstxt.UserAgent.add_allow" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
@@ -374,7 +374,7 @@
           <td>
                 <code>str</code>
           </td>
-          <td><p>Any comments for added value for human readability. Defaults to "".</p></td>
+          <td><p>Any comments for added value for human readability. Defaults to &ldquo;&rdquo;.</p></td>
           <td>
                 <code>&#39;&#39;</code>
           </td>
@@ -384,7 +384,7 @@
 
       <details class="quote">
         <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-        <pre class="highlight"><code class="language-python">def add_allow(self, allow_items, unique=True, comments=""):
+        <pre class="codehilite"><code class="language-python">def add_allow(self, allow_items, unique=True, comments=""):
     """Add allowed items/pages/slugs to current User Agent.
 
     Args:
@@ -413,9 +413,9 @@
 
 
 <h2 id="pyrobotstxt.UserAgent.add_disallow" class="doc doc-heading">
-<code class="highlight language-python">add_disallow(disallow_items, unique=True, comments='')</code>
+<code class="codehilite language-python">add_disallow(disallow_items, unique=True, comments='')</code>
 
-</h2>
+<a href="#pyrobotstxt.UserAgent.add_disallow" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
@@ -458,7 +458,7 @@
           <td>
                 <code>str</code>
           </td>
-          <td><p>Any comments for added value for human readability. Defaults to "".</p></td>
+          <td><p>Any comments for added value for human readability. Defaults to &ldquo;&rdquo;.</p></td>
           <td>
                 <code>&#39;&#39;</code>
           </td>
@@ -468,7 +468,7 @@
 
       <details class="quote">
         <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-        <pre class="highlight"><code class="language-python">def add_disallow(self, disallow_items, unique=True, comments=""):
+        <pre class="codehilite"><code class="language-python">def add_disallow(self, disallow_items, unique=True, comments=""):
     """Add disallowed items/pages/slugs to current User Agent.
 
     Args:
@@ -496,9 +496,9 @@
 
 
 <h2 id="pyrobotstxt.UserAgent.add_sitemap" class="doc doc-heading">
-<code class="highlight language-python">add_sitemap(site_map_path=None, comments='')</code>
+<code class="codehilite language-python">add_sitemap(site_map_path=None, comments='')</code>
 
-</h2>
+<a href="#pyrobotstxt.UserAgent.add_sitemap" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
@@ -531,7 +531,7 @@
           <td>
                 <code>str</code>
           </td>
-          <td><p>any comments to include with sitemap path. Defaults to "".</p></td>
+          <td><p>any comments to include with sitemap path. Defaults to &ldquo;&rdquo;.</p></td>
           <td>
                 <code>&#39;&#39;</code>
           </td>
@@ -541,7 +541,7 @@
 
       <details class="quote">
         <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-        <pre class="highlight"><code class="language-python">def add_sitemap(self, site_map_path=None, comments=""):
+        <pre class="codehilite"><code class="language-python">def add_sitemap(self, site_map_path=None, comments=""):
     """add file path of sitemap to current user agent.
 
     Args:
@@ -562,9 +562,9 @@
 
 
 <h2 id="pyrobotstxt.UserAgent.consolidate" class="doc doc-heading">
-<code class="highlight language-python">consolidate()</code>
+<code class="codehilite language-python">consolidate()</code>
 
-</h2>
+<a href="#pyrobotstxt.UserAgent.consolidate" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
@@ -573,7 +573,7 @@
 
       <details class="quote">
         <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-        <pre class="highlight"><code class="language-python">def consolidate(self):
+        <pre class="codehilite"><code class="language-python">def consolidate(self):
     """consolidate all the information (allowed, disallowed, sitemaps) in single text string."""
 
     self.content = f"\n\nUser-agent: {self.uage_aget_name}\n"
@@ -598,9 +598,9 @@
 
 
 <h2 id="pyrobotstxt.UserAgent.disallow_pagination" class="doc doc-heading">
-<code class="highlight language-python">disallow_pagination(prefix='/page/*', comments='')</code>
+<code class="codehilite language-python">disallow_pagination(prefix='/page/*', comments='')</code>
 
-</h2>
+<a href="#pyrobotstxt.UserAgent.disallow_pagination" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
@@ -623,7 +623,7 @@
           <td>
                 <code>str</code>
           </td>
-          <td><p>prefix for pages (default - /page/). Defaults to "/page/*".</p></td>
+          <td><p>prefix for pages (default - /page/). Defaults to &ldquo;/page/*&rdquo;.</p></td>
           <td>
                 <code>&#39;/page/*&#39;</code>
           </td>
@@ -633,7 +633,7 @@
           <td>
                 <code>str</code>
           </td>
-          <td><p>human readable comments for inclusion. Defaults to "".</p></td>
+          <td><p>human readable comments for inclusion. Defaults to &ldquo;&rdquo;.</p></td>
           <td>
                 <code>&#39;&#39;</code>
           </td>
@@ -643,7 +643,7 @@
 
       <details class="quote">
         <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-        <pre class="highlight"><code class="language-python">def disallow_pagination(self, prefix="/page/*", comments=""):
+        <pre class="codehilite"><code class="language-python">def disallow_pagination(self, prefix="/page/*", comments=""):
     """Single function to disable pagination on a website using robots.txt file.
 
     Args:
@@ -661,9 +661,9 @@
 
 
 <h2 id="pyrobotstxt.UserAgent.remove_allow" class="doc doc-heading">
-<code class="highlight language-python">remove_allow(allow_item)</code>
+<code class="codehilite language-python">remove_allow(allow_item)</code>
 
-</h2>
+<a href="#pyrobotstxt.UserAgent.remove_allow" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
@@ -696,7 +696,7 @@
 
       <details class="quote">
         <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-        <pre class="highlight"><code class="language-python">def remove_allow(self, allow_item):
+        <pre class="codehilite"><code class="language-python">def remove_allow(self, allow_item):
     """Remove any previously added allowed item from allowed list.
 
     Args:
@@ -715,9 +715,9 @@
 
 
 <h2 id="pyrobotstxt.UserAgent.remove_disallow" class="doc doc-heading">
-<code class="highlight language-python">remove_disallow(disallow_item)</code>
+<code class="codehilite language-python">remove_disallow(disallow_item)</code>
 
-</h2>
+<a href="#pyrobotstxt.UserAgent.remove_disallow" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
@@ -750,7 +750,7 @@
 
       <details class="quote">
         <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-        <pre class="highlight"><code class="language-python">def remove_disallow(self, disallow_item):
+        <pre class="codehilite"><code class="language-python">def remove_disallow(self, disallow_item):
     """Remove any previously added disallowed item from allowed list.
 
     Args:
@@ -769,9 +769,9 @@
 
 
 <h2 id="pyrobotstxt.UserAgent.remove_sitemap" class="doc doc-heading">
-<code class="highlight language-python">remove_sitemap(site_map_path=None)</code>
+<code class="codehilite language-python">remove_sitemap(site_map_path=None)</code>
 
-</h2>
+<a href="#pyrobotstxt.UserAgent.remove_sitemap" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
@@ -804,7 +804,7 @@
 
       <details class="quote">
         <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-        <pre class="highlight"><code class="language-python">def remove_sitemap(self, site_map_path=None):
+        <pre class="codehilite"><code class="language-python">def remove_sitemap(self, site_map_path=None):
     """remove a sitemap from current user agent.
 
     Args:
