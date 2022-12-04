@@ -45,7 +45,7 @@ setup(
     },
     classifiers=[
         "Topic :: Utilities",
-        "Development Status :: 1 - Planning" "Intended Audience :: Developers",
+        "Development Status :: 1 - Planning",
         "Intended Audience :: Education",
         "Intended Audience :: System Administrators",
         "Intended Audience :: Financial and Insurance Industry",
