@@ -213,10 +213,11 @@ class UserAgent:
     def consolidate(self):
         """consolidate all the information (allowed, disallowed, sitemaps) in single text string."""
 
-        self.content = f"\n\nUser-agent: {self.user_agent_name}\n"
+        self.content = f"\n\nUser-agent: {self.user_agent_name}"
 
+        # Support for including Crawl_delay. see feature request #1
         if self.crawl_delay > 0:
-            self.content = f"\nCrawl-delay: {self.crawl_delay}\n"
+            self.content += f"\nCrawl-delay: {self.crawl_delay}\n"
 
         if self.allowed:
             self.content += "\n# Allowed Patterns\n"
