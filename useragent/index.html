@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Faisal Shahzad" /><link rel="canonical" href="https://pyrobotstxt.seowings.org/useragent/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>UserAgent - PyRobotsTxt</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "UserAgent";
+        var mkdocs_page_input_path = "useragent.md";
+        var mkdocs_page_url = "/useragent/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> PyRobotsTxt
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../tutorial/">Tutorial</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">API</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../imageasascii/">ImageAsASCII</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../robotstxt/">RobotsTxt</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">UserAgent</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#pyrobotstxt.UserAgent">pyrobotstxt.UserAgent</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pyrobotstxt.UserAgent.__init__">__init__()</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pyrobotstxt.UserAgent.add_allow">add_allow()</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pyrobotstxt.UserAgent.add_disallow">add_disallow()</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pyrobotstxt.UserAgent.add_sitemap">add_sitemap()</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pyrobotstxt.UserAgent.consolidate">consolidate()</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pyrobotstxt.UserAgent.disallow_pagination">disallow_pagination()</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pyrobotstxt.UserAgent.remove_allow">remove_allow()</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pyrobotstxt.UserAgent.remove_disallow">remove_disallow()</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pyrobotstxt.UserAgent.remove_sitemap">remove_sitemap()</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">PyRobotsTxt</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>API &raquo;</li>
+      <li>UserAgent</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/seowings/pyrobotstxt/blob/main/docs/useragent.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="useragent-class">UserAgent Class</h1>
+
+
+<div class="doc doc-object doc-class">
+
+
+<a id="pyrobotstxt.UserAgent"></a>
+  <div class="doc doc-contents first">
+
+
+
+        <details class="quote">
+          <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
+          <pre class="highlight"><code class="language-python">class UserAgent:
+    def __init__(self, ua_name="*", crawl_delay=0):
+        """Initialize UserAgent objet with a user-agent name and crawl delay varible.
+
+        Args:
+            ua_name (str, optional): name of the user-agent. Defaults to "*".
+            crawl_delay (int, optional): crawl delay value for user agent/bots. Defaults to 0.
+        """
+        self.uage_aget_name = ua_name
+        self.crawl_delay = crawl_delay
+        self.sitemaps = []  # lists of sitemap for current UserAgent
+        self.allowed = []  # lists of Allowed Items for current UserAgent
+        self.disallowed = []  # lists of Disallowed Items for current UserAgent
+        self.content = ""  # consolidate content for robots.txt file
+
+    def add_allow(self, allow_items, unique=True, comments=""):
+        """Add allowed items/pages/slugs to current User Agent.
+
+        Args:
+            allow_items (str, list): single item or list of items allowed for current user agnet.
+            unique (bool, optional): If True duplicate item stripped to single value. Defaults to True.
+            comments (str, optional): Any comments for added value for human readability. Defaults to "".
+        """
+
+        if isinstance(allow_items, str):
+            allow_items = [allow_items]
+
+        if not isinstance(allow_items, list):
+            print("not supported", type(allow_items))  # raise exception
+            raise TypeError
+        else:
+            self.allowed += allow_items
+            if unique:
+                self.allowed = list(set(self.allowed))
+
+    def remove_allow(self, allow_item):
+        """Remove any previously added allowed item from allowed list.
+
+        Args:
+            allow_item (str, list): item(s) to be removed.
+        """
+
+        if allow_item in self.allowed:
+            self.allowed -= [allow_item]
+
+    def add_disallow(self, disallow_items, unique=True, comments=""):
+        """Add disallowed items/pages/slugs to current User Agent.
+
+        Args:
+            disallow_items (str, list): single item or list of items disallowed for current user agnet.
+            unique (bool, optional): If True duplicate item stripped to single value. Defaults to True.
+            comments (str, optional): Any comments for added value for human readability. Defaults to "".
+        """
+        if isinstance(disallow_items, str):
+            disallow_items = [disallow_items]
+
+        if not isinstance(disallow_items, list):
+            print("not supported", type(disallow_items))  # raise exception
+            raise TypeError
+        else:
+            self.disallowed += disallow_items
+            if unique:
+                self.disallowed = list(set(self.disallowed))
+
+    def remove_disallow(self, disallow_item):
+        """Remove any previously added disallowed item from allowed list.
+
+        Args:
+            disallow_item (str, list): item(s) to be removed.
+        """
+
+        if disallow_item in self.disallowed:
+            self.disallowed -= [disallow_item]
+
+    def add_sitemap(self, site_map_path=None, comments=""):
+        """add file path of sitemap to current user agent.
+
+        Args:
+            site_map_path (str): location of sitemap. Defaults to None.
+            comments (str): any comments to include with sitemap path. Defaults to "".
+        """
+        if not site_map_path:
+            raise ValueError
+
+        self.sitemaps.append(site_map_path)
+
+    def remove_sitemap(self, site_map_path=None):
+        """remove a sitemap from current user agent.
+
+        Args:
+            site_map_path (str): sitemap file path to be removed. Defaults to None.
+        """
+
+        if site_map_path in self.sitemaps:
+            self.sitemaps -= [site_map_path]
+
+    def disallow_pagination(self, prefix="/page/*", comments=""):
+        """Single function to disable pagination on a website using robots.txt file.
+
+        Args:
+            prefix (str, optional): prefix for pages (default - /page/). Defaults to "/page/*".
+            comments (str, optional): human readable comments for inclusion. Defaults to "".
+        """
+        self.add_disallow(disallow_item=prefix, comments=comments)
+
+    def consolidate(self):
+        """consolidate all the information (allowed, disallowed, sitemaps) in single text string."""
+
+        self.content = f"\n\nUser-agent: {self.uage_aget_name}\n"
+        if self.allowed:
+            self.content += "\n# Allowed Patterns\n"
+            self.content += "\n".join([f"Allow: {item}" for item in self.allowed])
+
+        if self.disallowed:
+            self.content += "\n\n# Disallowed Patterns\n"
+            self.content += "\n".join([f"Disallow: {item}" for item in self.disallowed])
+
+        if self.sitemaps:
+            self.content += "\n\n# Site Maps\n"
+            self.content += "\n".join([f"Sitemap: {item}" for item in self.sitemaps])</code></pre>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pyrobotstxt.UserAgent.__init__" class="doc doc-heading">
+<code class="highlight language-python">__init__(ua_name='*', crawl_delay=0)</code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Initialize UserAgent objet with a user-agent name and crawl delay varible.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>ua_name</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>name of the user-agent. Defaults to "*".</p></td>
+          <td>
+                <code>&#39;*&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>crawl_delay</code></td>
+          <td>
+                <code>int</code>
+          </td>
+          <td><p>crawl delay value for user agent/bots. Defaults to 0.</p></td>
+          <td>
+                <code>0</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
+        <pre class="highlight"><code class="language-python">def __init__(self, ua_name="*", crawl_delay=0):
+    """Initialize UserAgent objet with a user-agent name and crawl delay varible.
+
+    Args:
+        ua_name (str, optional): name of the user-agent. Defaults to "*".
+        crawl_delay (int, optional): crawl delay value for user agent/bots. Defaults to 0.
+    """
+    self.uage_aget_name = ua_name
+    self.crawl_delay = crawl_delay
+    self.sitemaps = []  # lists of sitemap for current UserAgent
+    self.allowed = []  # lists of Allowed Items for current UserAgent
+    self.disallowed = []  # lists of Disallowed Items for current UserAgent
+    self.content = ""  # consolidate content for robots.txt file</code></pre>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pyrobotstxt.UserAgent.add_allow" class="doc doc-heading">
+<code class="highlight language-python">add_allow(allow_items, unique=True, comments='')</code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Add allowed items/pages/slugs to current User Agent.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>allow_items</code></td>
+          <td>
+                <code>str, list</code>
+          </td>
+          <td><p>single item or list of items allowed for current user agnet.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>unique</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td><p>If True duplicate item stripped to single value. Defaults to True.</p></td>
+          <td>
+                <code>True</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>comments</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>Any comments for added value for human readability. Defaults to "".</p></td>
+          <td>
+                <code>&#39;&#39;</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
+        <pre class="highlight"><code class="language-python">def add_allow(self, allow_items, unique=True, comments=""):
+    """Add allowed items/pages/slugs to current User Agent.
+
+    Args:
+        allow_items (str, list): single item or list of items allowed for current user agnet.
+        unique (bool, optional): If True duplicate item stripped to single value. Defaults to True.
+        comments (str, optional): Any comments for added value for human readability. Defaults to "".
+    """
+
+    if isinstance(allow_items, str):
+        allow_items = [allow_items]
+
+    if not isinstance(allow_items, list):
+        print("not supported", type(allow_items))  # raise exception
+        raise TypeError
+    else:
+        self.allowed += allow_items
+        if unique:
+            self.allowed = list(set(self.allowed))</code></pre>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pyrobotstxt.UserAgent.add_disallow" class="doc doc-heading">
+<code class="highlight language-python">add_disallow(disallow_items, unique=True, comments='')</code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Add disallowed items/pages/slugs to current User Agent.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>disallow_items</code></td>
+          <td>
+                <code>str, list</code>
+          </td>
+          <td><p>single item or list of items disallowed for current user agnet.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>unique</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td><p>If True duplicate item stripped to single value. Defaults to True.</p></td>
+          <td>
+                <code>True</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>comments</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>Any comments for added value for human readability. Defaults to "".</p></td>
+          <td>
+                <code>&#39;&#39;</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
+        <pre class="highlight"><code class="language-python">def add_disallow(self, disallow_items, unique=True, comments=""):
+    """Add disallowed items/pages/slugs to current User Agent.
+
+    Args:
+        disallow_items (str, list): single item or list of items disallowed for current user agnet.
+        unique (bool, optional): If True duplicate item stripped to single value. Defaults to True.
+        comments (str, optional): Any comments for added value for human readability. Defaults to "".
+    """
+    if isinstance(disallow_items, str):
+        disallow_items = [disallow_items]
+
+    if not isinstance(disallow_items, list):
+        print("not supported", type(disallow_items))  # raise exception
+        raise TypeError
+    else:
+        self.disallowed += disallow_items
+        if unique:
+            self.disallowed = list(set(self.disallowed))</code></pre>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pyrobotstxt.UserAgent.add_sitemap" class="doc doc-heading">
+<code class="highlight language-python">add_sitemap(site_map_path=None, comments='')</code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>add file path of sitemap to current user agent.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>site_map_path</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>location of sitemap. Defaults to None.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>comments</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>any comments to include with sitemap path. Defaults to "".</p></td>
+          <td>
+                <code>&#39;&#39;</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
+        <pre class="highlight"><code class="language-python">def add_sitemap(self, site_map_path=None, comments=""):
+    """add file path of sitemap to current user agent.
+
+    Args:
+        site_map_path (str): location of sitemap. Defaults to None.
+        comments (str): any comments to include with sitemap path. Defaults to "".
+    """
+    if not site_map_path:
+        raise ValueError
+
+    self.sitemaps.append(site_map_path)</code></pre>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pyrobotstxt.UserAgent.consolidate" class="doc doc-heading">
+<code class="highlight language-python">consolidate()</code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>consolidate all the information (allowed, disallowed, sitemaps) in single text string.</p>
+
+      <details class="quote">
+        <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
+        <pre class="highlight"><code class="language-python">def consolidate(self):
+    """consolidate all the information (allowed, disallowed, sitemaps) in single text string."""
+
+    self.content = f"\n\nUser-agent: {self.uage_aget_name}\n"
+    if self.allowed:
+        self.content += "\n# Allowed Patterns\n"
+        self.content += "\n".join([f"Allow: {item}" for item in self.allowed])
+
+    if self.disallowed:
+        self.content += "\n\n# Disallowed Patterns\n"
+        self.content += "\n".join([f"Disallow: {item}" for item in self.disallowed])
+
+    if self.sitemaps:
+        self.content += "\n\n# Site Maps\n"
+        self.content += "\n".join([f"Sitemap: {item}" for item in self.sitemaps])</code></pre>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pyrobotstxt.UserAgent.disallow_pagination" class="doc doc-heading">
+<code class="highlight language-python">disallow_pagination(prefix='/page/*', comments='')</code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Single function to disable pagination on a website using robots.txt file.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>prefix</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>prefix for pages (default - /page/). Defaults to "/page/*".</p></td>
+          <td>
+                <code>&#39;/page/*&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>comments</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>human readable comments for inclusion. Defaults to "".</p></td>
+          <td>
+                <code>&#39;&#39;</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
+        <pre class="highlight"><code class="language-python">def disallow_pagination(self, prefix="/page/*", comments=""):
+    """Single function to disable pagination on a website using robots.txt file.
+
+    Args:
+        prefix (str, optional): prefix for pages (default - /page/). Defaults to "/page/*".
+        comments (str, optional): human readable comments for inclusion. Defaults to "".
+    """
+    self.add_disallow(disallow_item=prefix, comments=comments)</code></pre>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pyrobotstxt.UserAgent.remove_allow" class="doc doc-heading">
+<code class="highlight language-python">remove_allow(allow_item)</code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Remove any previously added allowed item from allowed list.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>allow_item</code></td>
+          <td>
+                <code>str, list</code>
+          </td>
+          <td><p>item(s) to be removed.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
+        <pre class="highlight"><code class="language-python">def remove_allow(self, allow_item):
+    """Remove any previously added allowed item from allowed list.
+
+    Args:
+        allow_item (str, list): item(s) to be removed.
+    """
+
+    if allow_item in self.allowed:
+        self.allowed -= [allow_item]</code></pre>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pyrobotstxt.UserAgent.remove_disallow" class="doc doc-heading">
+<code class="highlight language-python">remove_disallow(disallow_item)</code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Remove any previously added disallowed item from allowed list.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>disallow_item</code></td>
+          <td>
+                <code>str, list</code>
+          </td>
+          <td><p>item(s) to be removed.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
+        <pre class="highlight"><code class="language-python">def remove_disallow(self, disallow_item):
+    """Remove any previously added disallowed item from allowed list.
+
+    Args:
+        disallow_item (str, list): item(s) to be removed.
+    """
+
+    if disallow_item in self.disallowed:
+        self.disallowed -= [disallow_item]</code></pre>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pyrobotstxt.UserAgent.remove_sitemap" class="doc doc-heading">
+<code class="highlight language-python">remove_sitemap(site_map_path=None)</code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>remove a sitemap from current user agent.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>site_map_path</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>sitemap file path to be removed. Defaults to None.</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
+        <pre class="highlight"><code class="language-python">def remove_sitemap(self, site_map_path=None):
+    """remove a sitemap from current user agent.
+
+    Args:
+        site_map_path (str): sitemap file path to be removed. Defaults to None.
+    """
+
+    if site_map_path in self.sitemaps:
+        self.sitemaps -= [site_map_path]</code></pre>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../robotstxt/" class="btn btn-neutral float-left" title="RobotsTxt"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>© Copyright 2022 Faisal Shahzad (seowings.org)</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/seowings/pyrobotstxt" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../robotstxt/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Faisal Shahzad" /><link rel="canonical" href="https://pyrobotstxt.seowings.org/tutorial/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Tutorial - PyRobotsTxt</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Tutorial";
+        var mkdocs_page_input_path = "tutorial.md";
+        var mkdocs_page_url = "/tutorial/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> PyRobotsTxt
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Tutorial</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#basic">Basic</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#advance">Advance</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">API</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../imageasascii/">ImageAsASCII</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../robotstxt/">RobotsTxt</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../useragent/">UserAgent</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">PyRobotsTxt</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Tutorial</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/seowings/pyrobotstxt/blob/main/docs/tutorial.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="tutorial-how-to-create-robotstxt-file">Tutorial: How to Create Robots.txt File</h1>
+<p>In this tutorial, I will show how you can use <code>pyrobotstxt</code> to create <strong>Robots.txt</strong> files.</p>
+<h2 id="installation">Installation</h2>
+<p>You need to install <code>pyrobotstxt</code> package using <code>pip</code> with the following command. It should also work with other methods, e.g. <code>pipenv</code> or <code>poetry</code>. If you encounter any installation problems, please create an <code>issue</code>.</p>
+<pre><code class="language-bash">pip install pyrobotstxt
+</code></pre>
+<h2 id="usage">Usage</h2>
+<p>There are several use cases for <code>pyrobotstxt</code>. </p>
+<h3 id="basic">Basic</h3>
+<p>You can use it to check the details of a search bot. Just specify a keyword, e.g. <code>Google</code>, and it will provide a list of Google bots in the <code>pyrobotstxt</code> database.</p>
+<pre><code class="language-python">from pyrobotstxt import RobotsTxt
+print(RobotsTxt().robots_name(&quot;Google&quot;))
+</code></pre>
+<p>You can also do a reverse search by providing a robot name. Again, you will get details about that bot.</p>
+<pre><code class="language-python">from pyrobotstxt import RobotsTxt
+print(RobotsTxt().robots_details(&quot;Googlebot&quot;))
+</code></pre>
+<h3 id="advance">Advance</h3>
+<p>You can create a robot file by creating an object of the <code>RobotsTxt</code> class. </p>
+<pre><code class="language-python">from pyrobotstxt import RobotsTxt
+robots_file = RobotsTxt()
+</code></pre>
+<p>You can add a header and footer section. These are comments for humans looking into this <strong>robots.txt</strong> file. In the header section, you can also include file creation <code>date</code>. It is handy for archiving purposes.</p>
+<pre><code class="language-python">robots_file.include_header(&quot;Welcome Crawlers&quot;, append_date=True)
+robots_file.include_footer(&quot;Good Bye Crawlers&quot;)
+</code></pre>
+<p>In <strong>robots.txt</strong> file, rules are specified as per user agent. <code>pyrobotstxt</code> offer a <code>UserAgent</code> class. You can use it to create multiple user agent. Default user agent is <code>*</code>. </p>
+<pre><code class="language-python">ua_general = UserAgent(name=&quot;*&quot;)
+</code></pre>
+<p>After creating a user agent, you can add all those routes/pages/images you want to Allow or Disallow.</p>
+<pre><code class="language-python">ua_general.add_allow(
+    allow_items=[&quot;/home&quot;, &quot;/deep&quot;, &quot;/home&quot;],
+    unique=True,
+    comments=&quot;This is a list of allowed items&quot;,
+)
+
+ua_general.add_disallow(
+    disallow_items=[&quot;/nopi$&quot;, &quot;/topi?a&quot;, &quot;/img*.png$&quot;],
+    unique=True,
+    comments=&quot;This is a list of allowed items&quot;,
+)
+</code></pre>
+<p>Here is a complete example of a user agent. You can also include a sitemap of your website.</p>
+<pre><code class="language-python">ua_general_google = UserAgent(name=&quot;Google&quot;)
+ua_general_google.add_allow(
+    allow_items=[&quot;/home&quot;, &quot;/deep&quot;, &quot;/home&quot;],
+    unique=True,
+    comments=&quot;This is a list of allowed items&quot;,
+)
+ua_general_google.add_disallow(
+    disallow_items=[&quot;/nopi$&quot;, &quot;/topi?a&quot;, &quot;/img*.png$&quot;],
+    unique=True,
+    comments=&quot;This is a list of allowed items&quot;,
+)
+ua_general_google.add_sitemap(&quot;https://seowings.org/sitemap.xml&quot;)
+</code></pre>
+<p>After you have prepared user agents, you can add them to the <code>RobotsTxt</code> object. This object keeps a list of all the user agents.</p>
+<pre><code class="language-python">robots_file.add_user_agent(ua_general)
+robots_file.add_user_agent(ua_general_google)
+</code></pre>
+<p>You can also include any image (<code>ASCII</code> format) in your <strong>robots.txt</strong> file. For example, add the following command in your script/program to include an <code>ASCII</code> image in your <strong>robots.txt</strong> file.</p>
+<pre><code class="language-python">robots_file.include_image(&quot;logo_dark.png&quot;, 90)
+</code></pre>
+<p>In the end, you can save this file to the desired location. The default name of the file is <strong>robots.txt</strong>.</p>
+<pre><code class="language-python">robots_file.write(&quot;robots.txt&quot;)
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../imageasascii/" class="btn btn-neutral float-right" title="ImageAsASCII">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>© Copyright 2022 Faisal Shahzad (seowings.org)</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/seowings/pyrobotstxt" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../imageasascii/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
