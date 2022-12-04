@@ -45,12 +45,35 @@ setup(
     },
     classifiers=[
         "Topic :: Utilities",
-        "Intended Audience :: Developers",
+        "Development Status :: 1 - Planning" "Intended Audience :: Developers",
+        "Intended Audience :: Education",
+        "Intended Audience :: System Administrators",
+        "Intended Audience :: Financial and Insurance Industry",
+        "Intended Audience :: Healthcare Industry",
+        "Intended Audience :: Science/Research",
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
+        "Topic :: Education",
+        "Topic :: Office/Business :: Scheduling",
+        "Topic :: Scientific/Engineering",
+        "Topic :: Scientific/Engineering :: Visualization",
+        "Topic :: Software Development :: Libraries",
     ],
     packages=["pyrobotstxt"],
     python_requires=">=3.9",
-    install_requires=["pillow==9.3.0"]
+    install_requires=["pillow==9.3.0"],
+    extras_require={
+        "dev": [
+            "setuptools",
+            "pytest",
+            "pytest-cov",
+            "twine",
+            "wheel",
+            "mkdocs",
+            "mkdocs-gen-files",
+            "mkdocstrings[python]",
+            "pymdown-extensions",
+        ]
+    },
 )
