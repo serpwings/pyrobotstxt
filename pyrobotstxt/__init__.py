@@ -263,7 +263,7 @@ class RobotsTxt:
                 f.write(f"# {self.header}")
 
             # include user agents with consolidate text
-            for ua in mrt.user_agents:
+            for ua in self.user_agents:
                 ua.consolidate()
                 f.write(ua.content)
 
