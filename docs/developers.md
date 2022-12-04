@@ -1,6 +1,6 @@
 # Developers Tutorial
 
-## How to Install PyRobotsTxt on your Computer?
+## How to Install pyrobotstxt on your Computer?
 
 You can install using the virtual environment.
 
@@ -12,7 +12,7 @@ C:\src\pyrobotstxt> .\.venv\Scripts\activate
 (.venv) C:\src\pyrobotstxt> pip install -e .
 ```
 
-## How to Contribute to PyRobotsTxt?
+## How to Contribute to pyrobotstxt?
 
 ### Feature Suggestions
 
@@ -20,7 +20,7 @@ Do you have any feature suggestions, improvements and then create an issue on th
 
 ### Pull Requests
 
-Have you improved anything in PyRobotsTxt, then please create a usuall pull request and we will merge it after review.
+Have you improved anything in pyrobotstxt, then please create a usuall pull request and we will merge it after review.
 
 ### Collaborations
 

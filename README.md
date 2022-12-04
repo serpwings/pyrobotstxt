@@ -6,7 +6,7 @@
 
 In future releases, it would be possible to parse and analyze **robots.txt** file generated using any software (not limited to ``pyrobotstxt``)
 
-## Whats in PyRobotsTxt?
+## Whats in pyrobotstxt?
 
 We believe in monolithic software development and created this tiny package that does its job without any bloat. It is useful for 
 
@@ -14,9 +14,9 @@ We believe in monolithic software development and created this tiny package that
 - Parsing a **robots.txt** File [in progress]
 - Analyzing **robots.txt** File [in progress]
 
-## How to Use PyRobotsTxt?
+## How to Use pyrobotstxt?
 
-You can find detailed tutorial on [PyRobotsTxt website](https://pyrobotstxt.seowings.org).
+You can find detailed tutorial on [pyrobotstxt website](https://pyrobotstxt.seowings.org).
 
 ## Contribute
 
