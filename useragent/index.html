@@ -130,7 +130,7 @@
             ua_name (str, optional): name of the user-agent. Defaults to "*".
             crawl_delay (int, optional): crawl delay value for user agent/bots. Defaults to 0.
         """
-        self.uage_aget_name = ua_name
+        self.user_agent_name = ua_name
         self.crawl_delay = crawl_delay
         self.sitemaps = []  # lists of sitemap for current UserAgent
         self.allowed = []  # lists of Allowed Items for current UserAgent
@@ -230,7 +230,11 @@
     def consolidate(self):
         """consolidate all the information (allowed, disallowed, sitemaps) in single text string."""
 
-        self.content = f"\n\nUser-agent: {self.uage_aget_name}\n"
+        self.content = f"\n\nUser-agent: {self.user_agent_name}\n"
+
+        if self.crawl_delay &gt; 0:
+            self.content = f"\nCrawl-delay: {self.crawl_delay}\n"
+
         if self.allowed:
             self.content += "\n# Allowed Patterns\n"
             self.content += "\n".join([f"Allow: {item}" for item in self.allowed])
@@ -313,7 +317,7 @@
         ua_name (str, optional): name of the user-agent. Defaults to "*".
         crawl_delay (int, optional): crawl delay value for user agent/bots. Defaults to 0.
     """
-    self.uage_aget_name = ua_name
+    self.user_agent_name = ua_name
     self.crawl_delay = crawl_delay
     self.sitemaps = []  # lists of sitemap for current UserAgent
     self.allowed = []  # lists of Allowed Items for current UserAgent
@@ -576,7 +580,11 @@
         <pre class="codehilite"><code class="language-python">def consolidate(self):
     """consolidate all the information (allowed, disallowed, sitemaps) in single text string."""
 
-    self.content = f"\n\nUser-agent: {self.uage_aget_name}\n"
+    self.content = f"\n\nUser-agent: {self.user_agent_name}\n"
+
+    if self.crawl_delay &gt; 0:
+        self.content = f"\nCrawl-delay: {self.crawl_delay}\n"
+
     if self.allowed:
         self.content += "\n# Allowed Patterns\n"
         self.content += "\n".join([f"Allow: {item}" for item in self.allowed])
