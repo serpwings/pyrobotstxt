@@ -13,7 +13,3 @@ We believe in monolithic software development and created this tiny package that
 - Createing **robots.txt** File
 - Parsing a **robots.txt** File [in progress]
 - Analyzing **robots.txt** File [in progress]
-
-## How to Contribute?
-
-Pull Requests, Feature Suggestions, and collaborations are welcome.

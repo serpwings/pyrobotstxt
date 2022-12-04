@@ -9,7 +9,8 @@ edit_uri: blob/main/docs/
 
 nav:
   - Home: index.md
-  - Tutorial: tutorial.md
+  - User Tutorial: tutorial.md
+  - Developer Tutorial: developers.md
   - API:
       - ImageAsASCII: imageasascii.md
       - RobotsTxt: robotstxt.md
