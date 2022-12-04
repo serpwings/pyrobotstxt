@@ -20,6 +20,15 @@ plugins:
   - search
   - mkdocstrings
 
+markdown_extensions:
+  - admonition
+  - codehilite
+  - smarty
+  - meta
+  - toc:
+      permalink: True
+  - attr_list
+  
 theme: readthedocs
 
 copyright: © Copyright 2022 Faisal Shahzad (seowings.org)
