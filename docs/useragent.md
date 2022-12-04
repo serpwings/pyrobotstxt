@@ -1,0 +1,3 @@
+# UserAgent Class
+
+::: pyrobotstxt.UserAgent
