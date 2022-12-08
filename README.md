@@ -16,7 +16,7 @@ We believe in monolithic software development and created this tiny package that
 
 ## How to Use pyrobotstxt?
 
-You can find detailed tutorial on [pyrobotstxt website](https://pyrobotstxt.seowings.org).
+You can find detailed tutorial on [pyrobotstxt website](https://pyrobotstxt.pages.dev).
 
 ## Contribute
 
