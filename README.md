@@ -21,3 +21,7 @@ You can find detailed tutorial on [pyrobotstxt website](https://pyrobotstxt.page
 ## Contribute
 
 Pull Requests, Feature Suggestions, and collaborations are welcome.
+
+## About Us
+
+This work is a collaborative effort of [seowings](https://seowings.com/), and [serpwings](https://serpwings.com/).

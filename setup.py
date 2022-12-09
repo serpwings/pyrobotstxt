@@ -5,7 +5,7 @@
 pyrobotstxt: A Python Package for robots.txt Files.
 
 MIT License
-Copyright (c) 2022 SeoWings www.seowings.org
+Copyright (c) 2022 SERP Wings www.serpwings.com
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -28,7 +28,7 @@ from setuptools import setup
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
-version = "0.0.3"
+version = "0.0.4"
 
 setup(
     name="pyrobotstxt",
@@ -38,10 +38,10 @@ setup(
     description="Python Package to Generate and Analyse Robots.txt files",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/seowings/pyrobotstxt/",
+    url="https://github.com/serpwings/pyrobotstxt/",
     project_urls={
-        "Bug Tracker": "https://github.com/seowings/pyrobotstxt/issues",
-        "Documentation": "https://pyrobotstxt.seowings.org/",
+        "Bug Tracker": "https://github.com/serpwings/pyrobotstxt/issues",
+        "Documentation": "https://pyrobotstxt.pages.dev/",
     },
     classifiers=[
         "Topic :: Utilities",

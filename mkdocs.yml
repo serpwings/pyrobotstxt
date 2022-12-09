@@ -2,9 +2,9 @@ site_name: pyrobotstxt
 site_description: Python Package to Create, Analyze and Manipulate Robots.txt Files
 site_author: Faisal Shahzad
 
-site_url: https://pyrobotstxt.seowings.org
+site_url: https://pyrobotstxt.pages.dev
 
-repo_url: https://github.com/seowings/pyrobotstxt
+repo_url: https://github.com/serpwings/pyrobotstxt
 edit_uri: blob/main/docs/
 
 nav:
