@@ -23,6 +23,6 @@ If you are a developer or want to test latest version of pyrobotstxt, you might 
 ## About Us
 
 
-[SERP Wings](https://www.serpwings.com){target=_blank} is a digital organization to **Boosting SERP Performance Though Opensource Tools**.
+[SERP Wings](https://www.serpwings.com){target=_blank} is a digital organization which develops software solutions to **Boosting SERP Performance Though Opensource Tools**.
 
 [seowings](https://www.seowings.org){target=_blank} is an opensource project to write, develop and promote tools for Data Sciences and Digital Marketing.

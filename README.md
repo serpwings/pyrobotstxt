@@ -16,9 +16,7 @@ We believe in monolithic software development and created this tiny package that
 
 ## How to Use pyrobotstxt?
 
-You can find detailed tutorial on [pyrobotstxt tutorial website](https://serpwings.com/software/python-robots-txt/).
-
-You can consult [pyrobotstxt documentation website](https://pyrobotstxt.pages.dev) for API reference.
+You can find detailed tutorial on [pyrobotstxt tutorial website](https://serpwings.com/software/python-robots-txt/). You can consult [pyrobotstxt documentation website](https://pyrobotstxt.pages.dev) for API reference.
 
 ## Contribute
 
