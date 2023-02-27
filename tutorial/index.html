@@ -48,16 +48,6 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">User Tutorial</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#basic">Basic</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#advance">Advance</a>
-    </li>
-        </ul>
-    </li>
     </ul>
                 </li>
               </ul>
@@ -99,81 +89,7 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="tutorial-how-to-create-robotstxt-file">Tutorial: How to Create Robots.txt File<a class="headerlink" href="#tutorial-how-to-create-robotstxt-file" title="Permanent link">&para;</a></h1>
-<p>In this tutorial, I will show how you can use <code>pyrobotstxt</code> to create <strong>Robots.txt</strong> files.</p>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p>You need to install <code>pyrobotstxt</code> package using <code>pip</code> with the following command. It should also work with other methods, e.g. <code>pipenv</code> or <code>poetry</code>. If you encounter any installation problems, please create an <code>issue</code>.</p>
-<pre class="codehilite"><code class="language-bash">pip install pyrobotstxt
-</code></pre>
-
-<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<p>There are several use cases for <code>pyrobotstxt</code>. </p>
-<h3 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h3>
-<p>You can use it to check the details of a search bot. Just specify a keyword, e.g. <code>Google</code>, and it will provide a list of Google bots in the <code>pyrobotstxt</code> database.</p>
-<pre class="codehilite"><code class="language-python">from pyrobotstxt import RobotsTxt
-print(RobotsTxt().robots_name(&quot;Google&quot;))
-</code></pre>
-
-<p>You can also do a reverse search by providing a robot name. Again, you will get details about that bot.</p>
-<pre class="codehilite"><code class="language-python">from pyrobotstxt import RobotsTxt
-print(RobotsTxt().robots_details(&quot;Googlebot&quot;))
-</code></pre>
-
-<h3 id="advance">Advance<a class="headerlink" href="#advance" title="Permanent link">&para;</a></h3>
-<p>You can create a robot file by creating an object of the <code>RobotsTxt</code> class. </p>
-<pre class="codehilite"><code class="language-python">from pyrobotstxt import RobotsTxt
-robots_file = RobotsTxt()
-</code></pre>
-
-<p>You can add a header and footer section. These are comments for humans looking into this <strong>robots.txt</strong> file. In the header section, you can also include file creation <code>date</code>. It is handy for archiving purposes.</p>
-<pre class="codehilite"><code class="language-python">robots_file.include_header(&quot;Welcome Crawlers&quot;, append_date=True)
-robots_file.include_footer(&quot;Good Bye Crawlers&quot;)
-</code></pre>
-
-<p>In <strong>robots.txt</strong> file, rules are specified as per user agent. <code>pyrobotstxt</code> offer a <code>UserAgent</code> class. You can use it to create multiple user agent. Default user agent is <code>*</code>. </p>
-<pre class="codehilite"><code class="language-python">ua_general = UserAgent(name=&quot;*&quot;)
-</code></pre>
-
-<p>After creating a user agent, you can add all those routes/pages/images you want to Allow or Disallow.</p>
-<pre class="codehilite"><code class="language-python">ua_general.add_allow(
-    allow_items=[&quot;/home&quot;, &quot;/deep&quot;, &quot;/home&quot;],
-    unique=True,
-    comments=&quot;This is a list of allowed items&quot;,
-)
-
-ua_general.add_disallow(
-    disallow_items=[&quot;/nopi$&quot;, &quot;/topi?a&quot;, &quot;/img*.png$&quot;],
-    unique=True,
-    comments=&quot;This is a list of allowed items&quot;,
-)
-</code></pre>
-
-<p>Here is a complete example of a user agent. You can also include a sitemap of your website.</p>
-<pre class="codehilite"><code class="language-python">ua_general_google = UserAgent(name=&quot;Google&quot;)
-ua_general_google.add_allow(
-    allow_items=[&quot;/home&quot;, &quot;/deep&quot;, &quot;/home&quot;],
-    unique=True,
-    comments=&quot;This is a list of allowed items&quot;,
-)
-ua_general_google.add_disallow(
-    disallow_items=[&quot;/nopi$&quot;, &quot;/topi?a&quot;, &quot;/img*.png$&quot;],
-    unique=True,
-    comments=&quot;This is a list of allowed items&quot;,
-)
-ua_general_google.add_sitemap(&quot;https://seowings.org/sitemap.xml&quot;)
-</code></pre>
-
-<p>After you have prepared user agents, you can add them to the <code>RobotsTxt</code> object. This object keeps a list of all the user agents.</p>
-<pre class="codehilite"><code class="language-python">robots_file.add_user_agent(ua_general)
-robots_file.add_user_agent(ua_general_google)
-</code></pre>
-
-<p>You can also include any image (<code>ASCII</code> format) in your <strong>robots.txt</strong> file. For example, add the following command in your script/program to include an <code>ASCII</code> image in your <strong>robots.txt</strong> file.</p>
-<pre class="codehilite"><code class="language-python">robots_file.include_image(&quot;logo_dark.png&quot;, 90)
-</code></pre>
-
-<p>In the end, you can save this file to the desired location. The default name of the file is <strong>robots.txt</strong>.</p>
-<pre class="codehilite"><code class="language-python">robots_file.write(&quot;robots.txt&quot;)
-</code></pre>
+<p>A user tutorial is available at <a href="https://serpwings.com/software/python-robots-txt/#installation">serpwings pyrobotstxt tutorial page</a></p>
               
             </div>
           </div><footer>
