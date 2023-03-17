@@ -35,3 +35,10 @@ robots_file.add_user_agent(ua_general)
 robots_file.add_user_agent(ua_general_google)
 
 robots_file.write("robots.txt")
+
+# Read Remote File
+robots_file_2 = RobotsTxt()
+robots_file_2.read("https://nike.com/robots.txt")
+robots_file_2.write("nike_robots.txt")
+
+print (robots_file_2.robots_details("Baiduspider"))

@@ -24,14 +24,24 @@ SOFTWARE.
 """
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++
-# IMPORTS
+# IMPORTS Standard Library
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+import re
+from unittest.mock import Mock
 import os
 import json
 from math import ceil
 from datetime import datetime
 
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++
+# IMPORTS 3rd Party Libraries
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+import requests
+from requests.adapters import HTTPAdapter
+from requests.models import Response
+from bs4 import BeautifulSoup
 from PIL import Image
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -61,6 +71,45 @@ ROBOTS = {
     "rogerbot": "MOZ Bot",
     "xenu": "xenu",
 }
+
+HEADER = {
+    "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0",
+}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++
+# UTIL FUNCTIONS
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+def mock_requests_object(url):
+    """ """
+    response = Mock(spec=Response)
+    response.text = ""
+    response.status_code = 9999
+    response.url = url
+    return response
+
+
+def get_remote_content(url, max_retires=5):
+    """ """
+    try:
+        s = requests.Session()
+        s.mount(url, HTTPAdapter(max_retries=max_retires))
+        return s.get(url, headers=HEADER)
+    except:
+        return mock_requests_object(url)
+
+
+def get_corrected_url(url, fix_slash="sitemap.xml"):
+    """ """
+    if not url.startswith("http://") and not url.startswith("https://"):
+        url = f"http://{url}"
+
+    if not url.endswith(fix_slash):
+        url = f"{url}/{fix_slash}"
+
+    return url
+
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++
 # CLASSES
@@ -213,7 +262,7 @@ class UserAgent:
     def consolidate(self):
         """consolidate all the information (allowed, disallowed, sitemaps) in single text string."""
 
-        self.content = f"\n\nUser-agent: {self.user_agent_name}"
+        self.content = f"User-agent: {self.user_agent_name}"
 
         # Support for including Crawl_delay. see feature request #1
         if self.crawl_delay > 0:
@@ -231,6 +280,8 @@ class UserAgent:
             self.content += "\n\n# Site Maps\n"
             self.content += "\n".join([f"Sitemap: {item}" for item in self.sitemaps])
 
+        self.content += "\n\n"
+
 
 class RobotsTxt:
     def __init__(self, version=""):
@@ -246,10 +297,43 @@ class RobotsTxt:
         self.header = ""  # message added to the start of the output file.
         self.footer = ""  # message added to the end of the output file.
 
-    def read(self):
-        """read a robots.txt File (TODO)"""
+    def read(self, robots_url):
+        """read a robots.txt File"""
 
         self.create_time = datetime.now()
+        robots_url = get_corrected_url(robots_url, "")
+        response = get_remote_content(robots_url)
+
+        if response.status_code < 400:
+            for ua_item in response.text.split("User-agent:"):
+                if ua_item:
+                    ua_content_items = [
+                        ua_split_item.strip() for ua_split_item in ua_item.split("\n") if ua_split_item
+                    ]
+                    if not ua_content_items[0].startswith("#"):
+                        ua = UserAgent(ua_name=ua_content_items[0])
+                        ua.add_allow(
+                            [
+                                it.split("Allow:")[-1]
+                                for it in ua_content_items[1:]
+                                if it.startswith("Allow:")
+                            ]
+                        )
+                        ua.add_disallow(
+                            [
+                                it.split("Disallow:")[-1]
+                                for it in ua_content_items[1:]
+                                if it.startswith("Disallow:")
+                            ]
+                        )
+                        # TODO: Comments are not included Yet
+                        comment = [
+                            it.split("# ")[-1]
+                            for it in ua_content_items[1:]
+                            if it.startswith("#")
+                        ]
+
+                        self.add_user_agent(ua=ua)
 
     def write(self, file_path="robots.txt"):
         """write robots.txt file at a given file_path location.
@@ -268,7 +352,7 @@ class RobotsTxt:
                 ua.consolidate()
                 f.write(ua.content)
 
-            f.write("\n\n")
+            f.write("\n")
 
             # append ascii image, if available
             if self.image_branding:
@@ -276,7 +360,7 @@ class RobotsTxt:
 
             # append footer message
             if self.footer:
-                f.write(f"\n\n# {self.footer}")
+                f.write(f"\n# {self.footer}")
 
     def include_header(self, message="", append_date=True):
         """include header message with/without creation date.
@@ -286,7 +370,7 @@ class RobotsTxt:
             append_date (bool, optional): Append date/time to the header. Defaults to True.
         """
 
-        self.header = f"{message}"
+        self.header = message
 
         if append_date:
             self.header += f"\n# Created on {self.create_time} using pyrobotstxt"

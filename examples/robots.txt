@@ -1,27 +1,23 @@
 # Welcome Crawlers
-# Created on 2022-12-04 14:21:53.368205 using pyrobotstxt
-
-User-agent: *
-
+# Created on 2023-03-17 23:42:50.589282 using pyrobotstxtUser-agent: *
 # Allowed Patterns
 Allow: /home
 Allow: /deep
 
 # Disallowed Patterns
 Disallow: /topi?a
-Disallow: /img*.png$
 Disallow: /nopi$
+Disallow: /img*.png$
 
 User-agent: Google
-
 # Allowed Patterns
 Allow: /home
 Allow: /deep
 
 # Disallowed Patterns
 Disallow: /topi?a
-Disallow: /img*.png$
 Disallow: /nopi$
+Disallow: /img*.png$
 
 # Site Maps
 Sitemap: https://seowings.org/sitemap.xml
