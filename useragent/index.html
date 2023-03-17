@@ -230,7 +230,7 @@
     def consolidate(self):
         """consolidate all the information (allowed, disallowed, sitemaps) in single text string."""
 
-        self.content = f"\n\nUser-agent: {self.user_agent_name}"
+        self.content = f"User-agent: {self.user_agent_name}"
 
         # Support for including Crawl_delay. see feature request #1
         if self.crawl_delay &gt; 0:
@@ -246,7 +246,9 @@
 
         if self.sitemaps:
             self.content += "\n\n# Site Maps\n"
-            self.content += "\n".join([f"Sitemap: {item}" for item in self.sitemaps])</code></pre>
+            self.content += "\n".join([f"Sitemap: {item}" for item in self.sitemaps])
+
+        self.content += "\n\n"</code></pre>
         </details>
 
   
@@ -581,7 +583,7 @@
         <pre class="codehilite"><code class="language-python">def consolidate(self):
     """consolidate all the information (allowed, disallowed, sitemaps) in single text string."""
 
-    self.content = f"\n\nUser-agent: {self.user_agent_name}"
+    self.content = f"User-agent: {self.user_agent_name}"
 
     # Support for including Crawl_delay. see feature request #1
     if self.crawl_delay &gt; 0:
@@ -597,7 +599,9 @@
 
     if self.sitemaps:
         self.content += "\n\n# Site Maps\n"
-        self.content += "\n".join([f"Sitemap: {item}" for item in self.sitemaps])</code></pre>
+        self.content += "\n".join([f"Sitemap: {item}" for item in self.sitemaps])
+
+    self.content += "\n\n"</code></pre>
       </details>
   </div>
 
@@ -846,7 +850,7 @@
 
   <div role="contentinfo">
     <!-- Copyright etc -->
-      <p>© Copyright 2022 Faisal Shahzad (seowings.org)</p>
+      <p>© Copyright 2022-2023 Faisal Shahzad (seowings.org)</p>
   </div>
 
   Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.

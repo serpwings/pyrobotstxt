@@ -138,10 +138,43 @@
         self.header = ""  # message added to the start of the output file.
         self.footer = ""  # message added to the end of the output file.
 
-    def read(self):
-        """read a robots.txt File (TODO)"""
+    def read(self, robots_url):
+        """read a robots.txt File"""
 
         self.create_time = datetime.now()
+        robots_url = get_corrected_url(robots_url, "")
+        response = get_remote_content(robots_url)
+
+        if response.status_code &lt; 400:
+            for ua_item in response.text.split("User-agent:"):
+                if ua_item:
+                    ua_content_items = [
+                        ua_split_item.strip() for ua_split_item in ua_item.split("\n") if ua_split_item
+                    ]
+                    if not ua_content_items[0].startswith("#"):
+                        ua = UserAgent(ua_name=ua_content_items[0])
+                        ua.add_allow(
+                            [
+                                it.split("Allow:")[-1]
+                                for it in ua_content_items[1:]
+                                if it.startswith("Allow:")
+                            ]
+                        )
+                        ua.add_disallow(
+                            [
+                                it.split("Disallow:")[-1]
+                                for it in ua_content_items[1:]
+                                if it.startswith("Disallow:")
+                            ]
+                        )
+                        # TODO: Comments are not included Yet
+                        comment = [
+                            it.split("# ")[-1]
+                            for it in ua_content_items[1:]
+                            if it.startswith("#")
+                        ]
+
+                        self.add_user_agent(ua=ua)
 
     def write(self, file_path="robots.txt"):
         """write robots.txt file at a given file_path location.
@@ -160,7 +193,7 @@
                 ua.consolidate()
                 f.write(ua.content)
 
-            f.write("\n\n")
+            f.write("\n")
 
             # append ascii image, if available
             if self.image_branding:
@@ -168,7 +201,7 @@
 
             # append footer message
             if self.footer:
-                f.write(f"\n\n# {self.footer}")
+                f.write(f"\n# {self.footer}")
 
     def include_header(self, message="", append_date=True):
         """include header message with/without creation date.
@@ -178,7 +211,7 @@
             append_date (bool, optional): Append date/time to the header. Defaults to True.
         """
 
-        self.header = f"{message}"
+        self.header = message
 
         if append_date:
             self.header += f"\n# Created on {self.create_time} using pyrobotstxt"
@@ -482,7 +515,7 @@
         append_date (bool, optional): Append date/time to the header. Defaults to True.
     """
 
-    self.header = f"{message}"
+    self.header = message
 
     if append_date:
         self.header += f"\n# Created on {self.create_time} using pyrobotstxt"</code></pre>
@@ -561,21 +594,54 @@
 
 
 <h2 id="pyrobotstxt.RobotsTxt.read" class="doc doc-heading">
-<code class="codehilite language-python">read()</code>
+<code class="codehilite language-python">read(robots_url)</code>
 
 <a href="#pyrobotstxt.RobotsTxt.read" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
   
-      <p>read a robots.txt File (TODO)</p>
+      <p>read a robots.txt File</p>
 
       <details class="quote">
         <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-        <pre class="codehilite"><code class="language-python">def read(self):
-    """read a robots.txt File (TODO)"""
+        <pre class="codehilite"><code class="language-python">def read(self, robots_url):
+    """read a robots.txt File"""
 
-    self.create_time = datetime.now()</code></pre>
+    self.create_time = datetime.now()
+    robots_url = get_corrected_url(robots_url, "")
+    response = get_remote_content(robots_url)
+
+    if response.status_code &lt; 400:
+        for ua_item in response.text.split("User-agent:"):
+            if ua_item:
+                ua_content_items = [
+                    ua_split_item.strip() for ua_split_item in ua_item.split("\n") if ua_split_item
+                ]
+                if not ua_content_items[0].startswith("#"):
+                    ua = UserAgent(ua_name=ua_content_items[0])
+                    ua.add_allow(
+                        [
+                            it.split("Allow:")[-1]
+                            for it in ua_content_items[1:]
+                            if it.startswith("Allow:")
+                        ]
+                    )
+                    ua.add_disallow(
+                        [
+                            it.split("Disallow:")[-1]
+                            for it in ua_content_items[1:]
+                            if it.startswith("Disallow:")
+                        ]
+                    )
+                    # TODO: Comments are not included Yet
+                    comment = [
+                        it.split("# ")[-1]
+                        for it in ua_content_items[1:]
+                        if it.startswith("#")
+                    ]
+
+                    self.add_user_agent(ua=ua)</code></pre>
       </details>
   </div>
 
@@ -854,7 +920,7 @@ def robots_name(crawl_bot):
             ua.consolidate()
             f.write(ua.content)
 
-        f.write("\n\n")
+        f.write("\n")
 
         # append ascii image, if available
         if self.image_branding:
@@ -862,7 +928,7 @@ def robots_name(crawl_bot):
 
         # append footer message
         if self.footer:
-            f.write(f"\n\n# {self.footer}")</code></pre>
+            f.write(f"\n# {self.footer}")</code></pre>
       </details>
   </div>
 
@@ -887,7 +953,7 @@ def robots_name(crawl_bot):
 
   <div role="contentinfo">
     <!-- Copyright etc -->
-      <p>© Copyright 2022 Faisal Shahzad (seowings.org)</p>
+      <p>© Copyright 2022-2023 Faisal Shahzad (seowings.org)</p>
   </div>
 
   Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
