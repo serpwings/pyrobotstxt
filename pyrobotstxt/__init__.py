@@ -298,7 +298,14 @@ class RobotsTxt:
         self.footer = ""  # message added to the end of the output file.
 
     def read(self, robots_url):
-        """read a robots.txt File"""
+        """Read a Remote Robots.txt file from a given URL
+
+        If robots_txt is missing a robots.txt file extention then it will be automatically added.
+        Parsing will only be carried out if robots_url returns a valid response object.
+
+        Args:
+            robots_url (str):  robots.txt url at a remote location.
+        """
 
         self.create_time = datetime.now()
         robots_url = get_corrected_url(robots_url, "")
@@ -308,7 +315,9 @@ class RobotsTxt:
             for ua_item in response.text.split("User-agent:"):
                 if ua_item:
                     ua_content_items = [
-                        ua_split_item.strip() for ua_split_item in ua_item.split("\n") if ua_split_item
+                        ua_split_item.strip()
+                        for ua_split_item in ua_item.split("\n")
+                        if ua_split_item
                     ]
                     if not ua_content_items[0].startswith("#"):
                         ua = UserAgent(ua_name=ua_content_items[0])
