@@ -8,7 +8,7 @@
     <title>ImageAsASCII - pyrobotstxt</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
     
       <script>
@@ -18,12 +18,11 @@
         var mkdocs_page_url = "/imageasascii/";
       </script>
     
-    <script src="../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -35,7 +34,7 @@
           <a href=".." class="icon icon-home"> pyrobotstxt
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -57,7 +56,7 @@
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">ImageAsASCII</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#pyrobotstxt.ImageAsASCII">pyrobotstxt.ImageAsASCII</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pyrobotstxt.ImageAsASCII">ImageAsASCII</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#pyrobotstxt.ImageAsASCII.__init__">__init__()</a>
     </li>
@@ -83,9 +82,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>API &raquo;</li>
-      <li>ImageAsASCII</li>
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">API</li>
+      <li class="breadcrumb-item active">ImageAsASCII</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/serpwings/pyrobotstxt/blob/main/docs/imageasascii.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
@@ -101,16 +100,16 @@
 <div class="doc doc-object doc-class">
 
 
+
 <a id="pyrobotstxt.ImageAsASCII"></a>
   <div class="doc doc-contents first">
 
   
       <p>Class to Convert RGB/GRAYSCALE Images to ASCII (Text) format.</p>
 
-
-        <details class="quote">
-          <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-          <pre class="codehilite"><code class="language-python">class ImageAsASCII:
+            <details class="quote">
+              <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
+              <pre class="codehilite"><code class="language-python">class ImageAsASCII:
     """Class to Convert RGB/GRAYSCALE Images to ASCII (Text) format."""
 
     def __init__(self, image_path=None, desired_width=90):
@@ -146,7 +145,7 @@
             self.ascii_image += (
                 " ".join(str_container[i : i + self.image.width]) + "\n#\t"
             )</code></pre>
-        </details>
+            </details>
 
   
 
@@ -160,12 +159,14 @@
 
 
 
+
 <div class="doc doc-object doc-function">
 
 
 
+
 <h2 id="pyrobotstxt.ImageAsASCII.__init__" class="doc doc-heading">
-<code class="codehilite language-python">__init__(image_path=None, desired_width=90)</code>
+          <code class=" language-python">__init__(image_path=None, desired_width=90)</code>
 
 <a href="#pyrobotstxt.ImageAsASCII.__init__" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -175,43 +176,46 @@
       <p>intializes an object of ImageAsASCII class. A user need to
 specify desired (ascii) image width and the path of RGB/Gray Image.</p>
 
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>desired_width</code></td>
-          <td>
-                <code>int</code>
-          </td>
-          <td><p>width of the desired output ASCII Image.</p></td>
-          <td>
-                <code>90</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>image_path</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td><p>path of the input image. If None then conversion will not work.</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
 
-      <details class="quote">
-        <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-        <pre class="codehilite"><code class="language-python">def __init__(self, image_path=None, desired_width=90):
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>desired_width</code></b>
+                  (<code>int</code>, default:
+                      <code>90</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>width of the desired output ASCII Image.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>image_path</code></b>
+                  (<code>str</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>path of the input image. If None then conversion will not work.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+          <details class="quote">
+            <summary> <code>pyrobotstxt/__init__.py</code></summary>
+            <pre class="codehilite"><code class="language-python">def __init__(self, image_path=None, desired_width=90):
     """intializes an object of ImageAsASCII class. A user need to
     specify desired (ascii) image width and the path of RGB/Gray Image.
 
@@ -229,17 +233,19 @@ specify desired (ascii) image width and the path of RGB/Gray Image.</p>
 
     desired_height = desired_width * self.image.height / self.image.width
     self.image = self.image.resize((ceil(desired_width), ceil(desired_height)))</code></pre>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
 
 
+
 <h2 id="pyrobotstxt.ImageAsASCII.map_to_ascii" class="doc doc-heading">
-<code class="codehilite language-python">map_to_ascii()</code>
+          <code class=" language-python">map_to_ascii()</code>
 
 <a href="#pyrobotstxt.ImageAsASCII.map_to_ascii" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -249,9 +255,9 @@ specify desired (ascii) image width and the path of RGB/Gray Image.</p>
       <p>map each pixel of indvidual image to a respective ascii value from ascii_str_map.
 This is achieved by deviding each pixel to ca. 10 equal parts (//25) and then maped to respecive value.</p>
 
-      <details class="quote">
-        <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-        <pre class="codehilite"><code class="language-python">def map_to_ascii(self):
+          <details class="quote">
+            <summary> <code>pyrobotstxt/__init__.py</code></summary>
+            <pre class="codehilite"><code class="language-python">def map_to_ascii(self):
     """map each pixel of indvidual image to a respective ascii value from ascii_str_map.
     This is achieved by deviding each pixel to ca. 10 equal parts (//25) and then maped to respecive value.
     """
@@ -265,7 +271,7 @@ This is achieved by deviding each pixel to ca. 10 equal parts (//25) and then ma
         self.ascii_image += (
             " ".join(str_container[i : i + self.image.width]) + "\n#\t"
         )</code></pre>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -317,14 +323,15 @@ This is achieved by deviding each pixel to ca. 10 equal parts (//25) and then ma
     
   </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme_extra.js" defer></script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>

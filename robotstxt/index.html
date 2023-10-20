@@ -8,7 +8,7 @@
     <title>RobotsTxt - pyrobotstxt</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
     
       <script>
@@ -18,12 +18,11 @@
         var mkdocs_page_url = "/robotstxt/";
       </script>
     
-    <script src="../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -35,7 +34,7 @@
           <a href=".." class="icon icon-home"> pyrobotstxt
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -59,7 +58,7 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">RobotsTxt</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#pyrobotstxt.RobotsTxt">pyrobotstxt.RobotsTxt</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pyrobotstxt.RobotsTxt">RobotsTxt</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#pyrobotstxt.RobotsTxt.__init__">__init__()</a>
     </li>
@@ -99,9 +98,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>API &raquo;</li>
-      <li>RobotsTxt</li>
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">API</li>
+      <li class="breadcrumb-item active">RobotsTxt</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/serpwings/pyrobotstxt/blob/main/docs/robotstxt.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
@@ -117,14 +116,14 @@
 <div class="doc doc-object doc-class">
 
 
+
 <a id="pyrobotstxt.RobotsTxt"></a>
   <div class="doc doc-contents first">
 
 
-
-        <details class="quote">
-          <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-          <pre class="codehilite"><code class="language-python">class RobotsTxt:
+            <details class="quote">
+              <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
+              <pre class="codehilite"><code class="language-python">class RobotsTxt:
     def __init__(self, version=""):
         """Intializes Robots.txt operations
 
@@ -291,7 +290,7 @@
             for robot in ROBOTS
             if crawl_bot.lower() == robot.lower()
         }</code></pre>
-        </details>
+            </details>
 
   
 
@@ -305,12 +304,14 @@
 
 
 
+
 <div class="doc doc-object doc-function">
 
 
 
+
 <h2 id="pyrobotstxt.RobotsTxt.__init__" class="doc doc-heading">
-<code class="codehilite language-python">__init__(version='')</code>
+          <code class=" language-python">__init__(version='')</code>
 
 <a href="#pyrobotstxt.RobotsTxt.__init__" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -319,33 +320,36 @@
   
       <p>Intializes Robots.txt operations</p>
 
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>version</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td><p>Version number (optional) for robots.txt. Defaults to &ldquo;&rdquo;.</p></td>
-          <td>
-                <code>&#39;&#39;</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
 
-      <details class="quote">
-        <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-        <pre class="codehilite"><code class="language-python">def __init__(self, version=""):
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>version</code></b>
+                  (<code>str</code>, default:
+                      <code>&#39;&#39;</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Version number (optional) for robots.txt. Defaults to &ldquo;&rdquo;.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+          <details class="quote">
+            <summary> <code>pyrobotstxt/__init__.py</code></summary>
+            <pre class="codehilite"><code class="language-python">def __init__(self, version=""):
     """Intializes Robots.txt operations
 
     Args:
@@ -357,17 +361,19 @@
     self.image_branding = None
     self.header = ""  # message added to the start of the output file.
     self.footer = ""  # message added to the end of the output file.</code></pre>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
 
 
+
 <h2 id="pyrobotstxt.RobotsTxt.add_user_agent" class="doc doc-heading">
-<code class="codehilite language-python">add_user_agent(ua)</code>
+          <code class=" language-python">add_user_agent(ua)</code>
 
 <a href="#pyrobotstxt.RobotsTxt.add_user_agent" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -376,50 +382,53 @@
   
       <p>Add/Append user agent to RobotsTxt</p>
 
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>ua</code></td>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="pyrobotstxt.UserAgent" href="../useragent/#pyrobotstxt.UserAgent">UserAgent</a></code>
-          </td>
-          <td><p>user agent to be included in final robots.txt file.</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
 
-      <details class="quote">
-        <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-        <pre class="codehilite"><code class="language-python">def add_user_agent(self, ua):
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>ua</code></b>
+                  (<code><a class="autorefs autorefs-internal" title="pyrobotstxt.UserAgent" href="../useragent/#pyrobotstxt.UserAgent">UserAgent</a></code>)
+              –
+              <div class="doc-md-description">
+                <p>user agent to be included in final robots.txt file.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+          <details class="quote">
+            <summary> <code>pyrobotstxt/__init__.py</code></summary>
+            <pre class="codehilite"><code class="language-python">def add_user_agent(self, ua):
     """Add/Append user agent to RobotsTxt
 
     Args:
         ua (UserAgent): user agent to be included in final robots.txt file.
     """
     self.user_agents.append(ua)</code></pre>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
 
 
+
 <h2 id="pyrobotstxt.RobotsTxt.include_footer" class="doc doc-heading">
-<code class="codehilite language-python">include_footer(message='')</code>
+          <code class=" language-python">include_footer(message='')</code>
 
 <a href="#pyrobotstxt.RobotsTxt.include_footer" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -428,50 +437,55 @@
   
       <p>include footer message</p>
 
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>message</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td><p>footer message. Defaults to &ldquo;&rdquo;.</p></td>
-          <td>
-                <code>&#39;&#39;</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
 
-      <details class="quote">
-        <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-        <pre class="codehilite"><code class="language-python">def include_footer(self, message=""):
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>message</code></b>
+                  (<code>str</code>, default:
+                      <code>&#39;&#39;</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>footer message. Defaults to &ldquo;&rdquo;.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+          <details class="quote">
+            <summary> <code>pyrobotstxt/__init__.py</code></summary>
+            <pre class="codehilite"><code class="language-python">def include_footer(self, message=""):
     """include footer message
 
     Args:
         message (str, optional): footer message. Defaults to "".
     """
     self.footer = message</code></pre>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
 
 
+
 <h2 id="pyrobotstxt.RobotsTxt.include_header" class="doc doc-heading">
-<code class="codehilite language-python">include_header(message='', append_date=True)</code>
+          <code class=" language-python">include_header(message='', append_date=True)</code>
 
 <a href="#pyrobotstxt.RobotsTxt.include_header" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -480,43 +494,46 @@
   
       <p>include header message with/without creation date.</p>
 
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>message</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td><p>header or header message. Defaults to &ldquo;&rdquo;.</p></td>
-          <td>
-                <code>&#39;&#39;</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>append_date</code></td>
-          <td>
-                <code>bool</code>
-          </td>
-          <td><p>Append date/time to the header. Defaults to True.</p></td>
-          <td>
-                <code>True</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
 
-      <details class="quote">
-        <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-        <pre class="codehilite"><code class="language-python">def include_header(self, message="", append_date=True):
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>message</code></b>
+                  (<code>str</code>, default:
+                      <code>&#39;&#39;</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>header or header message. Defaults to &ldquo;&rdquo;.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>append_date</code></b>
+                  (<code>bool</code>, default:
+                      <code>True</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>Append date/time to the header. Defaults to True.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+          <details class="quote">
+            <summary> <code>pyrobotstxt/__init__.py</code></summary>
+            <pre class="codehilite"><code class="language-python">def include_header(self, message="", append_date=True):
     """include header message with/without creation date.
 
     Args:
@@ -528,17 +545,19 @@
 
     if append_date:
         self.header += f"\n# Created on {self.create_time} using pyrobotstxt"</code></pre>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
 
 
+
 <h2 id="pyrobotstxt.RobotsTxt.include_image" class="doc doc-heading">
-<code class="codehilite language-python">include_image(image_path=None, desired_width=90)</code>
+          <code class=" language-python">include_image(image_path=None, desired_width=90)</code>
 
 <a href="#pyrobotstxt.RobotsTxt.include_image" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -547,43 +566,46 @@
   
       <p>includes ascii image provided at image_file</p>
 
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>image_path</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td><p>location of image file. Defaults to None.</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>desired_width</code></td>
-          <td>
-                <code>int</code>
-          </td>
-          <td><p>desired width of ASCII image. Defaults to 90(chars).</p></td>
-          <td>
-                <code>90</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
 
-      <details class="quote">
-        <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-        <pre class="codehilite"><code class="language-python">def include_image(self, image_path=None, desired_width=90):
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>image_path</code></b>
+                  (<code>str</code>, default:
+                      <code>None</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>location of image file. Defaults to None.</p>
+              </div>
+            </li>
+            <li>
+              <b><code>desired_width</code></b>
+                  (<code>int</code>, default:
+                      <code>90</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>desired width of ASCII image. Defaults to 90(chars).</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+          <details class="quote">
+            <summary> <code>pyrobotstxt/__init__.py</code></summary>
+            <pre class="codehilite"><code class="language-python">def include_image(self, image_path=None, desired_width=90):
     """includes ascii image provided at image_file
 
     Args:
@@ -593,17 +615,19 @@
     img = ImageAsASCII(image_path=image_path, desired_width=desired_width)
     img.map_to_ascii()
     self.image_branding = img.ascii_image</code></pre>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
 
 
+
 <h2 id="pyrobotstxt.RobotsTxt.read" class="doc doc-heading">
-<code class="codehilite language-python">read(robots_url)</code>
+          <code class=" language-python">read(robots_url)</code>
 
 <a href="#pyrobotstxt.RobotsTxt.read" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -614,33 +638,34 @@
 <p>If robots_txt is missing a robots.txt file extention then it will be automatically added.
 Parsing will only be carried out if robots_url returns a valid response object.</p>
 
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>robots_url</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td><p>robots.txt url at a remote location.</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
 
-      <details class="quote">
-        <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-        <pre class="codehilite"><code class="language-python">def read(self, robots_url):
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>robots_url</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>robots.txt url at a remote location.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+          <details class="quote">
+            <summary> <code>pyrobotstxt/__init__.py</code></summary>
+            <pre class="codehilite"><code class="language-python">def read(self, robots_url):
     """Read a Remote Robots.txt file from a given URL
 
     If robots_txt is missing a robots.txt file extention then it will be automatically added.
@@ -686,17 +711,19 @@ Parsing will only be carried out if robots_url returns a valid response object.<
                     ]
 
                     self.add_user_agent(ua=ua)</code></pre>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
 
 
+
 <h2 id="pyrobotstxt.RobotsTxt.remove_user_agent" class="doc doc-heading">
-<code class="codehilite language-python">remove_user_agent(ua_name='')</code>
+          <code class=" language-python">remove_user_agent(ua_name='')</code>
 
 <a href="#pyrobotstxt.RobotsTxt.remove_user_agent" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -705,50 +732,55 @@ Parsing will only be carried out if robots_url returns a valid response object.<
   
       <p>Remove user agent from RobotsTxt</p>
 
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>ua_name</code></td>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="pyrobotstxt.UserAgent" href="../useragent/#pyrobotstxt.UserAgent">UserAgent</a></code>
-          </td>
-          <td><p>user agent to be removed from already included in robots.txt file.</p></td>
-          <td>
-                <code>&#39;&#39;</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
 
-      <details class="quote">
-        <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-        <pre class="codehilite"><code class="language-python">def remove_user_agent(self, ua_name=""):
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>ua_name</code></b>
+                  (<code><a class="autorefs autorefs-internal" title="pyrobotstxt.UserAgent" href="../useragent/#pyrobotstxt.UserAgent">UserAgent</a></code>, default:
+                      <code>&#39;&#39;</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>user agent to be removed from already included in robots.txt file.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+          <details class="quote">
+            <summary> <code>pyrobotstxt/__init__.py</code></summary>
+            <pre class="codehilite"><code class="language-python">def remove_user_agent(self, ua_name=""):
     """Remove user agent from RobotsTxt
 
     Args:
         ua_name (UserAgent): user agent to be removed from already included in robots.txt file.
     """
     self.user_agents -= [ua for ua in self.user_agents if ua.name == ua_name]</code></pre>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
 
 
+
 <h2 id="pyrobotstxt.RobotsTxt.robots_details" class="doc doc-heading">
-<code class="codehilite language-python">robots_details(crawl_bot)</code>
+          <code class=" language-python">robots_details(crawl_bot)</code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
@@ -761,51 +793,58 @@ Parsing will only be carried out if robots_url returns a valid response object.<
   
       <p>Static Method to return details about any crawl bot.</p>
 
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>crawl_bot</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td><p>name of crawl bot</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
 
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>crawl_bot</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>name of crawl bot</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
                 <code>dict</code>
-          </td>
-          <td><p>information about all crawl bots matching to input string.</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-      <details class="quote">
-        <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-        <pre class="codehilite"><code class="language-python">@staticmethod
+            –
+            <div class="doc-md-description">
+              <p>information about all crawl bots matching to input string.</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+          <details class="quote">
+            <summary> <code>pyrobotstxt/__init__.py</code></summary>
+            <pre class="codehilite"><code class="language-python">@staticmethod
 def robots_details(crawl_bot):
     """Static Method to return details about any crawl bot.
 
@@ -820,17 +859,19 @@ def robots_details(crawl_bot):
         for robot in ROBOTS
         if crawl_bot.lower() == robot.lower()
     }</code></pre>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
 
 
+
 <h2 id="pyrobotstxt.RobotsTxt.robots_name" class="doc doc-heading">
-<code class="codehilite language-python">robots_name(crawl_bot)</code>
+          <code class=" language-python">robots_name(crawl_bot)</code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
@@ -843,51 +884,58 @@ def robots_details(crawl_bot):
   
       <p>Find robot name, if you know any keywrod about that crawl bot.</p>
 
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>crawl_bot</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td><p>description about the crawl bot. e.g. facebook</p></td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
 
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>crawl_bot</code></b>
+                  (<code>str</code>)
+              –
+              <div class="doc-md-description">
+                <p>description about the crawl bot. e.g. facebook</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+    <th class="field-name">Returns:</th>
+    <td class="field-body">
+      <ul class="first simple">
+          <li>
                 <code>dict</code>
-          </td>
-          <td><p>all matching crawl bots with relevent information</p></td>
-        </tr>
-    </tbody>
-  </table>
-
-      <details class="quote">
-        <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-        <pre class="codehilite"><code class="language-python">@staticmethod
+            –
+            <div class="doc-md-description">
+              <p>all matching crawl bots with relevent information</p>
+            </div>
+          </li>
+      </ul>
+    </td>
+    </tr>
+  </tbody>
+</table>
+          <details class="quote">
+            <summary> <code>pyrobotstxt/__init__.py</code></summary>
+            <pre class="codehilite"><code class="language-python">@staticmethod
 def robots_name(crawl_bot):
     """Find robot name, if you know any keywrod about that crawl bot.
 
@@ -902,17 +950,19 @@ def robots_name(crawl_bot):
         for robot in ROBOTS
         if crawl_bot.capitalize() in ROBOTS[robot]
     }</code></pre>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
 
 
+
 <h2 id="pyrobotstxt.RobotsTxt.write" class="doc doc-heading">
-<code class="codehilite language-python">write(file_path='robots.txt')</code>
+          <code class=" language-python">write(file_path='robots.txt')</code>
 
 <a href="#pyrobotstxt.RobotsTxt.write" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -921,33 +971,36 @@ def robots_name(crawl_bot):
   
       <p>write robots.txt file at a given file_path location.</p>
 
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>file_path</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td><p>location of robots.txt file. Defaults to &ldquo;robots.txt&rdquo;.</p></td>
-          <td>
-                <code>&#39;robots.txt&#39;</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
 
-      <details class="quote">
-        <summary>Source code in <code>pyrobotstxt/__init__.py</code></summary>
-        <pre class="codehilite"><code class="language-python">def write(self, file_path="robots.txt"):
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>file_path</code></b>
+                  (<code>str</code>, default:
+                      <code>&#39;robots.txt&#39;</code>
+)
+              –
+              <div class="doc-md-description">
+                <p>location of robots.txt file. Defaults to &ldquo;robots.txt&rdquo;.</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+          <details class="quote">
+            <summary> <code>pyrobotstxt/__init__.py</code></summary>
+            <pre class="codehilite"><code class="language-python">def write(self, file_path="robots.txt"):
     """write robots.txt file at a given file_path location.
 
     Args:
@@ -973,7 +1026,7 @@ def robots_name(crawl_bot):
         # append footer message
         if self.footer:
             f.write(f"\n# {self.footer}")</code></pre>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -1025,14 +1078,15 @@ def robots_name(crawl_bot):
     
   </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme_extra.js" defer></script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>
