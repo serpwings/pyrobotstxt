@@ -62,7 +62,7 @@ setup(
     ],
     packages=["pyrobotstxt"],
     python_requires=">=3.9",
-    install_requires=["pillow==10.0.1", "requests==2.28.2", "beautifulsoup4==4.11.2"],
+    install_requires=["pillow==10.0.1", "requests==2.31.0", "beautifulsoup4==4.11.2"],
     extras_require={
         "dev": [
             "setuptools",
